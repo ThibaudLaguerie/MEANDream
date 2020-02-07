@@ -38,16 +38,16 @@ export class ProductCreateComponent implements OnInit, OnDestroy {
       this.form = new FormGroup({ // on initialise notre formulaire
         'image': new FormControl(null, {validators: [Validators.required],
                                 asyncValidators: [mimeType]}),
-        'reference': new FormControl('Table', {validators: [Validators.required]}), // on crée un contrôleur
-        'price': new FormControl(200, {validators: [Validators.required]}),
-        'description': new FormControl('Table de terrasse', {validators: [Validators.required]}),
-        'brand': new FormControl('Tablito', {validators: [Validators.required]}),
-        'category': new FormControl('Meuble', {validators: [Validators.required]}),
-        'color': new FormControl('Marron', {validators: []}),
-        'weight': new FormControl(200, {validators: []}),
-        'length': new FormControl(100, {validators: []}),
-        'width': new FormControl(50, {validators: []}),
-        'height': new FormControl(100, {validators: []})
+        'reference': new FormControl('', {validators: [Validators.required]}), // on crée un contrôleur
+        'price': new FormControl(null, {validators: [Validators.required]}),
+        'description': new FormControl('', {validators: [Validators.required]}),
+        'brand': new FormControl('', {validators: [Validators.required]}),
+        'category': new FormControl('', {validators: [Validators.required]}),
+        'color': new FormControl('', {validators: []}),
+        'weight': new FormControl(null, {validators: []}),
+        'length': new FormControl(null, {validators: []}),
+        'width': new FormControl(null, {validators: []}),
+        'height': new FormControl(null, {validators: []})
       });
     // paramMap est un Observer sur lequel on peut utiliser subscribe()
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
